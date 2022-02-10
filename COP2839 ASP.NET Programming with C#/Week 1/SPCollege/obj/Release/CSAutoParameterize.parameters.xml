@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="SchoolContext-Web.config Connection String" description="SchoolContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=SPCollege2;Integrated Security=SSPI;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Tristan\\Desktop\\School\\COP2839\ ASP\.NET\\Week\ 1\\SPCollege\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SchoolContext']/@connectionString" />
+  </parameter>
+  <parameter name="DAL)-Web.config Connection String" description="DAL) Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=DAL)-20211018125545; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|DAL)-20211018125545.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Tristan\\Desktop\\School\\COP2839\ ASP\.NET\\Week\ 1\\SPCollege\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DAL)']/@connectionString" />
+  </parameter>
+  <parameter name="SchoolContext_DatabasePublish-Web.config Connection String" description="SchoolContext_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="SchoolContext_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Tristan\\Desktop\\School\\COP2839\ ASP\.NET\\Week\ 1\\SPCollege\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SchoolContext_DatabasePublish']/@connectionString" />
+  </parameter>
+</parameters>
