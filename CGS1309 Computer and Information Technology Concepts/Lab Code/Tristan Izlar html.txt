@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Lab Assignment</title>
+</head>
+
+​
+<body>
+
+<p><h1>Tristan Izlar</h1></p>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Great_Wave%2C_British_Museum_1937%2C0710%2C0.147.png" style="height:auto;width:375px;" class = "center">
+</img>
+​
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Bachalpsee_reflection.jpg/1280px-Bachalpsee_reflection.jpg" style="height:250px;width:250px;"class = "center">
+</img>
+​
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/ThinkCentre_S50.jpg" style="height:150px;width:150px;"class = "center">
+</img>
+​
+<p><h3> <a href="https://en.wikipedia.org/wiki/Blockchain"> I think blockchain is super neat, see for yourself!</h3> </a> </p>
+
+</body>
+</html>
