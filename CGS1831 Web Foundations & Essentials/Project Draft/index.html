@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Angry Nerd Cafe | Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="cafe.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="wrapper">
+                <div class="logo">
+                    <a href="#">Angry Nerd Cafe</a>
+                </div>
+                <nav>
+                    <a href="Contact.html">Contact</a>
+                    <a href="Menu.html">Menu</a>
+                    <a href="About Us.html">About Us</a>
+                    <a href="index.html">Home</a>
+                </nav>
+            </div>
+        </header>
+        <div>
+            <div class="sectionHeadings">
+                <h2>Some of our work ^_^</h2>
+            </div>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="cute-latte-art.jpg" style="width:100%" alt="Latte Coffee with fun foam art.">
+                    <div class="text">We practice a LATTE</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="happy-coffee.jpg" style="width:100%" alt="Coffee with bubbles that look like a smiling face.">
+                    <div class="text">Happy Coffee</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="panda-coffee.jpg" style="width:100%" alt="Cute to go coffee cup with a panda on it.">
+                    <div class="text">Our products are always available to go!</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <footer>
+            <br>Copyright &copy; 2021 Angry Nerd Cafe
+            <br><a href="mailto:tristan@izlar.com">tristan@izlar.com</a>
+        </footer>
+        <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+        </script>
+    </div>
+</body>
+
+</html>

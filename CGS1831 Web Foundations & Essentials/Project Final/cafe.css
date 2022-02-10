@@ -1,0 +1,313 @@
+* {
+    box-sizing: border-box;
+}
+
+form { 
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+header {
+    height: 100px;
+    background-color: #164451;
+    width: 80%;
+    z-index: 10;
+    position: fixed;
+}
+
+.spacer
+{
+    width: 80%;
+    height: 115px;
+}
+
+nav {
+    line-height: 50px;
+}
+
+nav a {
+    float: right;
+    text-decoration: none;
+    display: block;
+    font-family: Verdana;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 17px;
+    padding: 0 10px;
+    margin-top: 22px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #DAD496;
+    background-color: #D94141;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+body {
+    background-color: #D94141;
+    color: #164451;
+    font-family: Verdana, Arial, sans-serif;
+    margin: 0;
+    font-size: 27px;
+}
+
+img {
+    object-fit: contain;
+    vertical-align: middle;
+    max-width: 1024px;
+    max-height: 700px;
+}
+
+footer {
+    background-color: #164451;
+    color: #DAD496;
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 5px;
+
+}
+
+footer a {
+    color: #DAD496;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 80%;
+    background-color: #DAD496;
+}
+
+.sectionHeadings {
+    text-align: center;
+    font-size: 28px;
+}
+
+.logo {
+    float: left;
+    line-height: 100px;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 36px;
+    font-family: Verdana;
+    color: #D94141;
+    letter-spacing: 2px;
+}
+
+
+p.blocktext {
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33%;
+    padding: 30px;
+    text-align: center;
+}
+
+.columnheaders {
+    float: left;
+    width: 50%;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.storeInfoLables {
+    color: #D94141;
+}
+
+.mySlides {
+    display: none
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1024px;
+    height: 700px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: black;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: -35px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+
+#storeInfo {
+    text-align: center
+}
+
+#SubmitButton {
+    margin-left: 12em;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/*For smaller screens*/
+@media only screen and (max-width: 1650px) {
+
+    .wrapper {
+        width: 100%;
+    }
+
+    header {
+        width: 100%;
+        padding-left: 5%;
+    }
+
+    p.blocktext {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+}
+
+
+
+/*For smallest screens*/
+@media only screen and (max-width: 1125px) {
+
+
+    header {
+        padding-left: 0;
+        background-color: #164451;
+    }
+
+    nav {
+        line-height: 25px;
+    }
+
+    nav a {
+        float: none;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 100%;
+    }
+
+    .logo {
+        float: none;
+        background-color: #164451;
+    }
+
+    .logo a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .spacer
+    {
+        width: 80%;
+        height: 250px;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+}

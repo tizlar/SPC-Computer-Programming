@@ -1,0 +1,171 @@
+
+* { box-sizing: border-box; }
+
+footer {
+	background-color:#9BC1C2;
+	text-align: center;
+	font-style: italic;
+	font-size:.60em;
+	padding: 1em;}
+
+main {
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-bottom:1em;
+	display: block;
+	margin-left: 170px;
+	padding-top: 1em;}
+
+body {
+	background-color: #3F2860;
+	color:#3F2860;
+	font-family: Verdana, Arial, sans-serif;}
+
+header {
+	background: url(lilyheader.jpg) no-repeat right;
+	background-color: #9BC1C2;
+	height: 150px;}
+
+h1 {
+	padding-top: 50px;
+	padding-left: 2em;}
+
+nav {
+	float: left;
+	width: 160px;
+	font-weight: bold;
+	padding: 1em;}
+
+nav a {
+	text-decoration: none;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	border-width: 3px;
+    border-style: outset;
+    border-color: #CCCCCC;
+	padding: 1em;
+	margin-bottom: 1em;}
+
+nav a:link { color: #3F2860; }
+
+nav a:visited { color: #497777; }
+
+nav a:hover { color: #A26100; border: 3px inset #333333; }
+
+
+nav ul { 
+	list-style-type: none;
+	padding-left: 0px; }
+
+.floatleft {
+	float: left;
+	margin-right: 4em;}
+
+.studio {
+	font-style: italic;}
+
+.clear {
+	clear: both;}
+
+#wrapper { 
+	margin-left: auto; 
+    margin-right: auto;
+    width: 80%;
+    background-color: #F5F5F5;
+    min-width: 1200px;
+    max-width: 1480px;}
+
+header, nav, main, footer { display: block; }
+
+
+#mobile { display: none; }
+
+#desktop { display: inline; }
+
+@media only screen and (max-width: 1024px) {
+	body { margin: 0; 
+		padding: 0;
+	} 
+	#wrapper {
+		width: 100%;
+		min-width: 0;
+		margin: 0;
+		padding: 0;
+	}
+	header {padding: 1px;}
+
+	h1 {padding-top: 1em;}
+
+	nav {
+		float: none;
+		width: auto;
+		padding-left: 2em;
+	}
+	nav a {
+		padding:.2em;
+		margin-left: .3em;
+		float: left;
+		width: 23%;
+	}
+	main {
+		padding-top: 2.5em;
+		padding-bottom: 2.5em;
+		padding-left: 1em;
+		padding-right: 1em;
+		margin: 0;
+		font-size: 90%;
+		clear: both;
+	}
+	#hero {
+		width: 100%;
+		height: auto;
+	}
+	h2, h3, p, dl {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
+	main ul {
+		margin: 2em;
+	}
+	.floatleft {
+		margin-left: 2em;
+		margin-bottom: 1em;
+	}
+	.clear {
+		padding-left: 2em;
+	}
+}
+
+@media only all and (max-width: 768px) {
+	h1 {
+		font-size: 2em;
+		padding-top: .25em;
+		padding-left: 1.5em;
+		width: 85%;
+		text-align: center;
+	}
+	nav a {
+		padding: .5em;
+		width: 45%;
+		float: left;
+		min-width: 6em;
+		margin-left: .5em;
+	}
+	main {
+		padding-top: 0;
+	}
+	.floatleft {
+		float: none;
+		display: none;
+	}
+	#hero {
+		display: none;
+	}
+	footer {
+		padding: .5em;
+		margin: 0;
+	}
+	#mobile { display: inline; }
+	#desktop { display: none; }
+}
