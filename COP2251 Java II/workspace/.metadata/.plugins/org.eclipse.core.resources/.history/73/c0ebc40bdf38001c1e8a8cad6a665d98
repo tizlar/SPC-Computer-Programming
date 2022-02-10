@@ -1,0 +1,40 @@
+package chap44example;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class EmployeeDeductTest {
+
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterAll
+	static void tearDownAfterClass() throws Exception {
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
+	}
+	
+	@Test
+	public void testDeduct() {
+		Employee emp1 = new Employee("Tristan Izlar", 70000.00, "Consultant");
+		
+		 double actual = emp1.deduct(.5);
+		 double expected = 350;
+		 
+		 assertEquals(expected, actual, 0.001);
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+	}
+
+}

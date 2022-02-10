@@ -1,0 +1,38 @@
+package chap44example;
+import org.junit.jupiter.api.*;
+import static org.junit.Assert.*;
+
+public class EmployeeTest {
+
+	@BeforeAll
+    public static void setUpClass() {
+        // code executed before all test methods
+    }
+     
+    @BeforeEach
+    public void setUp() {
+        // code executed before each test method
+    }
+    
+	@Test
+	public void testDeduct() {
+		Employee emp1 = new Employee("Tristan Izlar", 70000.00, "Consultant");
+		
+		 double actual = emp1.deduct(.5);
+		 double expected = 350;
+		 
+		 assertEquals(expected, actual);
+	}
+	
+	@AfterEach
+    public void tearDown() {
+        // code executed after each test method
+    }
+     
+    @AfterAll
+    public static void tearDownClass() {
+        // code executed after all test methods
+    }
+
+
+}

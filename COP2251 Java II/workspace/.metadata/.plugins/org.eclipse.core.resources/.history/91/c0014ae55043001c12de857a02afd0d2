@@ -1,0 +1,53 @@
+package izlar15;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+
+
+public class Exercise15_4 extends Application {
+	
+	GridPane inputPane = new GridPane();
+	GridPane buttonPane = new GridPane();
+	private TextField tfNum1 = new TextField();
+	private TextField tfNum2 = new TextField();
+	private TextField tfNum3 = new TextField();
+	
+	@Override
+	public void start(Stage primaryStage) {
+		
+		inputPane.setPadding(new Insets(20));
+		inputPane.setHgap(10);
+		inputPane.setVgap(10);
+		inputPane.add(new Label("Number 1:"), 0, 0);
+		inputPane.add(tfNum1, 1, 0);
+		inputPane.add(new Label("Number 2:"), 3, 0);
+		inputPane.add(tfNum2, 4, 0);
+		inputPane.add(new Label("Results:"), 5, 0);
+		inputPane.add(tfNum3, 6, 0);
+		
+		
+		// creating scene and placing it in stage
+		Scene scene = new Scene(inputPane);
+		primaryStage.setTitle("Exercise15_01");
+		primaryStage.setScene(scene);
+		
+		// displaying the stage
+		primaryStage.show();
+
+	}
+
+	private void add() {}
+	private void sub() {}
+	private void multiply() {}
+	private void divide() {}
+	
+	// main
+	public static void main(String[] args) {
+		 launch(args);
+	}
+}

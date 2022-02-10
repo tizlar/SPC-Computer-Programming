@@ -1,0 +1,464 @@
+/* This is to overwrite Asciidoc Ch1SS*/	
+body {
+	font-family: "Google Sans", "Roboto", sans-serif;
+    color: #4A4A4A;
+}
+
+details>summary:first-of-type {
+    cursor: pointer;
+    color: #2156a5;
+    text-decoration: underline;
+}
+
+:not(pre):not([class^=L])>code {
+	background-color: #e8eaed;
+}
+
+.sect1 {
+    margin-top: 20px;
+}
+img:after {
+    content: "We're sorry, the image above is broken, please let us know.";
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    border-bottom-style: solid;
+    border-color: #ba3925;
+}
+#toc.toc2{
+	background: none;
+	top: 350px;
+	padding: 0 1em 20em 1em;
+}
+#toc a {
+	color: #343a40;
+}
+.toc_expand {
+	float: right;
+	cursor: pointer;
+}
+.hidden-toc-element {
+	display: none;
+}
+#author icon.twitter {
+	margin-right: .3em;
+}
+#toc.toc2 #toctitle{
+	color: #333333;
+    text-transform: uppercase;
+    font-size: initial;
+}
+#footer a{
+	color: rgba(255,255,255,.8);
+	margin-right: 20px;
+	line-height: initial;
+}
+b.button {
+    font-family: "Droid Sans Mono","DejaVu Sans Mono",monospace;
+    display: inline-block;
+    color: rgba(0,0,0,.8);
+    font-size: .80em;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.2), 0 0 0 0.1em white inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,.2), 0 0 0 0.1em #fff inset;
+    margin: 0 .15em;
+    padding: .2em .5em;
+    vertical-align: middle;
+    position: relative;
+    top: -.1em;
+    white-space: nowrap;
+}
+b.button:after, b.button:before {
+    content: '';
+}
+
+#header>h1:first-child {
+    font-family: "Google Sans", "Roboto", sans-serif;
+    margin-top: 70px;
+    color: #4a4a4a;
+    font-weight: 400;
+    line-height: 1.2;
+}
+#header, #content{
+	width: 70%;
+	margin-left: 25%;
+}
+
+#content h1 > a.link, h2 > a.link, h3 > a.link, #toctitle > a.link, .sidebarblock > .content > .title > a.link, h4 > a.link, h5 > a.link, h6 > a.link {
+    color: #4a4a4a;
+}
+
+p {
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+}
+
+a {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+h2, h3 {
+	font-weight:bold;
+    padding-top: 50px;
+    margin-top: -50px;
+}
+.material-icons.white { color: white; }
+.material-icons.md-48 { font-size: 48px; }
+code {
+	overflow-wrap: break-word;
+	word-wrap: break-word;	
+}
+
+/* change color of highlighted coding */
+.listingblock ::selection {
+    background-color: #3498db;
+    color: white;
+}
+
+.admonitionblock {
+	overflow-wrap: break-word;
+    word-break: break-word;
+}
+table {
+	word-break: break-word;
+	overflow-wrap: break-word;
+}
+
+pre .conum[data-value] {
+    background: #fff !important;
+    color: #111 !important;
+}
+
+b.button:before{
+	content: "";
+    padding: 0 0 0 0;
+}
+b.button:after{
+	content: "";
+    padding: 0 0 0 0;
+}
+b.button{
+	font-family: "Droid Sans Mono","DejaVu Sans Mono",monospace;
+	font-weight: 100;
+    display: inline-block;
+    color: rgba(0,0,0,.8);
+    font-size: .65em;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.2) , 0 0 0 .1em white inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,.2) , 0 0 0 .1em #fff inset;
+    margin: 0 .15em;
+    padding: .2em .5em;
+    vertical-align: middle;
+    position: relative;
+    top: -.1em;
+    white-space: nowrap;
+}
+
+#leftcol {
+	position: absolute;
+	width: 18%;
+    left: 40px;
+    margin-top: 90px;
+}
+#ad-left{
+	margin-bottom: 50px;
+}
+
+#rightcol {
+	width: 15%;
+    float: right;
+    padding: 5px;
+    margin-top: 30px;
+}
+#rightcol_tutorial {
+	width: 15%;
+    float: right;
+    padding: 5px;
+    margin-top: 30px;
+}
+
+.vogella_learnportal {
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 20px;
+    padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 20px;
+	background-color: #2b3137;
+}
+.vogella_learnportal h3 {
+    color: white;
+    margin-bottom: 0;
+}
+.vogella_learnportal a, .wrapper_vogella_learnportal a {
+    text-decoration: none;
+    color: darkorange;
+}
+.wrapper_vogella_learnportal:hover .orange {
+    text-decoration: underline;
+	font-weight: 600px;
+}
+
+.vogella_learnportal i.material-icons {
+    font-size: 40px;
+    padding-left: -10px;
+    margin-left: -10px;
+    vertical-align: bottom;
+}
+
+.orange{
+	color:orange;
+	display: -webkit-inline-box;
+}
+
+.self_advertisement {
+    color: darkorange;
+    text-decoration: underline;
+}
+
+.vogella_ads {
+	width: 20em;
+	position: fixed;
+ 	font-family: serif;
+    border-left: 1px solid #e7e7e9;
+    padding-left: 15px;
+    padding-right: 15px;
+  	right: 0;
+  	z-index: 1010;
+}
+
+.vogella_ads h1{
+	color: #333333;
+  	text-transform: uppercase;
+  	font-size: initial;
+}
+.vogella_ads ul {
+    padding-left: inherit;
+}
+
+.vogella_ads li {
+    font-size: 14px;
+}
+
+.vogella_ads a:hover {
+    color: darkorange;
+}
+
+.vogella_ads img {
+	width: 32px;
+}
+
+.social_media_icons{
+	text-align: left;
+    padding-left: 25px;
+}
+
+.social_media_icons a {
+    text-decoration: none;
+}
+
+.about_vogella {
+	width: 30%;
+	min-width: 140px;
+	height: 100px;
+	border:1px solid #BBB;
+	font-size:1em;
+	background: #2b3137;
+	float: left;
+	margin-right: 3%;
+	text-align: center;
+	margin-bottom: 3%;
+	padding-top: 10px;
+}
+.about_vogella a {
+	text-decoration: none!important;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	/* z-index makes the clickable area stay on top of any text that follows*/
+	z-index: 1; 
+}
+.about_vogella h1{
+	font-size: 1.1em;
+	line-height: 1.0;
+	color: #ff8c00;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.about_vogella img {
+    width: 50px;
+    height: 50px;
+}
+
+.about_vogella_container {
+  display: inline-block;
+  width: 100%;	
+}
+#kindle {
+    border-style: outset;
+    width: 450px;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #2b3137;
+    font-size: xx-large;
+    color: white;
+}
+.kindle_link{
+    width: 450px;
+    height: 200px;
+    position: absolute;
+    display: block;
+    z-index: 1;
+}
+#kindle img {
+    margin-right: 30px;
+}
+
+.listingblock:hover .clipboard {
+	display: block;
+ }
+
+.clipboard {
+	display: none;
+    border: 0;
+    font-size: .75em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 5px;
+    color: #999;
+    position: absolute;
+    top: 0rem;
+    right: 3.5rem;
+    background: transparent;
+}
+
+.clipboard:hover, .clipboard:focus, .clipboard:active {
+	outline: 0;
+	background-color: #eee9e6;
+}
+
+
+/* Small laptops ----------- */	
+@media only screen and (max-width : 611px) {
+	#header, #content {
+    	width: 95%;
+	}
+	#leftcol, #rightcol {
+		display: none;
+	}
+	#kindle {
+	    top: 70px;
+    	right: 50px;
+    }
+    #switcher {
+    	margin-top: 75px;
+    }
+}
+@media only screen and (max-width: 767px) {
+	.vogella_ads {
+		display: none;
+	}
+	#toc.toc2 {
+		margin-top: 0px;
+		padding: 0 1em 1em 1em;
+	}
+	#header>h1:first-child {
+    	font-size: 1.8rem;
+    }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 940px) {
+    #toc.toc2 {
+    	margin-top: 330px;
+    }
+    #header>h1:first-child {
+    	font-size: 1.8rem;
+    }
+}
+
+@media only screen and (min-width : 612px) and (max-width : 1279px) {
+    #header, #content {
+    	width: 90%;
+    	margin-left: 0%;
+	}
+    #leftcol, #rightcol {
+		display: none;
+	}
+	#kindle {
+    	top: 90px;
+    	right: 50px;	
+    }
+    #switcher {
+    	margin-top: 90px;
+    }
+    #rightcol_tutorial{
+    	margin-top: 55px;
+    }
+}
+
+@media only screen and (min-width : 1280px) and (max-width : 1365px) {
+    #header, #content {
+    	width: 69%;
+    	margin-left: 30%;
+	}
+	#leftcol {
+		left: 10px;
+	}
+	#kindle {
+    	top: 90px;
+    	right: 50px;	
+    }
+    #switcher {
+    	margin-top: 90px;
+    }
+    #rightcol_tutorial{
+    	margin-top: 55px;
+    }
+}
+
+@media only screen and (min-width : 1366px) and (max-width : 1600px) {
+	#leftcol {
+		left: 10px;
+	}
+	#kindle {
+	    right: 250px;
+	}
+	#rightcol {
+    	width: 20%;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1600px) {
+	.vogella_ads, #toc.toc2 {
+		width: 15em;
+	}
+}
+
+/* Smartphones ----------- */	
+@media only screen and (max-device-width : 1080px) {
+	#leftcol, #rightcol {
+		display: none;
+	}
+	#header, #content{
+    	width: 97%;
+    	margin-left: 0%
+	}
+	#kindle {
+		display: none;
+	}
+	#switcher{
+    	margin-top: 59px;
+    }
+}
+

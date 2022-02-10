@@ -1,0 +1,32 @@
+package izlar32;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Chapter34Assignment {
+
+	public static void main(String[] args) throws SQLException {
+		// TODO Auto-generated method stub
+
+		 // Connect to a database
+	    Connection conn = DriverManager.getConnection ("jdbc:mysql://localhost/example", "root", "sesame");
+	    System.out.println("Database connected");
+	    
+		 // Create a statement
+		 Statement statement = conn.createStatement();
+		
+	    
+	    String updateSQL = "insert into product(vin, make, model, year, color, price) "
+	    		+ "values('10000A','Toyota','Prius C', 2012, 'Black', 5000)";
+	    
+	    statement.executeUpdate(updateSQL);
+	    
+		
+	    
+	    
+
+	}
+
+}

@@ -1,0 +1,32 @@
+package izlar19;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Chapter19Exercise {
+
+	public static <E extends Comparable<E>> E max(E[] list) {
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> userIntegers = new ArrayList<>();
+		int counter = 1;
+		// prompt user to enter ten integers
+		Scanner input = new Scanner(System.in);
+		
+		while (counter < 11){
+			System.out.println("Please enter integer #" + counter);
+			userIntegers.add(input.nextInt());
+			counter++;
+		}
+		
+		
+		
+		
+		
+
+	}
+
+}

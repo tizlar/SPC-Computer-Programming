@@ -1,0 +1,19 @@
+package chap44example;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class EmployeeTest {
+
+	@Test
+	public void testDeduct() {
+		Employee emp1 = new Employee("Tristan Izlar", 70000.00, "Consultant");
+		
+		 double actual = emp1.deduct(.5);
+		 double expected = 350;
+		 
+		 assertEquals(expected, actual);
+	}
+
+}

@@ -1,0 +1,35 @@
+function toggleToc(event) {
+	icon = event.target;
+	iconCl = icon.classList;
+	if (icon.getAttribute('aria-expanded') == "true") {
+		iconCl.remove('fa-chevron-up');
+		iconCl.add('fa-chevron-down');
+		icon.setAttribute('aria-expanded', false)
+	} else {
+		iconCl.remove('fa-chevron-down');
+		iconCl.add('fa-chevron-up');
+		icon.setAttribute('aria-expanded', true)
+	}
+	var li = icon.parentElement;
+	var cl = li.querySelector('ul').classList;
+	if (cl.contains('hidden-toc-element')) {
+		cl.remove('hidden-toc-element');
+	} else {
+		cl.add('hidden-toc-element');
+	}
+}
+
+function keyDownToggleToc(event) {
+	if (event.isComposing || event.keyCode == 229) {
+		return;
+	}
+	if (event.keyCode == 13 || event.keyCode == 32 || event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40) {
+		event.preventDefault();
+		toggleToc(event);
+	}
+}
+
+document.querySelectorAll('.sectlevel1 > * > icon').forEach(sectLevel1 => {
+	sectLevel1.addEventListener('click', toggleToc);
+	sectLevel1.addEventListener('keydown', keyDownToggleToc);
+})

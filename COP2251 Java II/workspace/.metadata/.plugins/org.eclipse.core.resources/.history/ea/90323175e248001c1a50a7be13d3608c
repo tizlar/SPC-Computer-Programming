@@ -1,0 +1,44 @@
+package izlar19;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Chapter19Exercise {
+
+	public static <E extends Comparable<E>> E max(E[] list) {
+		
+		E maxVal = list[0];
+
+		for (int i = 0; i < list.length; i++) {
+			if (maxVal.compareTo(list[i]) < 0) {
+				maxVal = list[i];
+			}
+		}
+		return maxVal;
+}
+		
+	
+	public static void main(String[] args) {
+		
+		Integer[] userIntegers = new Integer[10];
+		int counter = 1;
+		Scanner input = new Scanner(System.in);
+		
+		// prompt user to enter ten integers
+		for (int i = 0; i < 10; i++){
+			System.out.println("Please enter integer #" + (i + 1));
+			userIntegers[i] = input.nextInt();
+		}
+		
+		// invoke max() on arraylist
+		System.out.println("Max of entered integers: " + max(userIntegers));
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

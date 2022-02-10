@@ -1,0 +1,6 @@
+You should add the mysql-connector-java jar file to your project so it will compile.
+
+Right click on the project node and create a new source folder called lib.
+Copy the mysql-connector-java jar file to this new lib folder.
+Refresh your project with File > Refresh.
+Right click on the mysql jar file in the lib folder and select Build Path > Add to Build Path.

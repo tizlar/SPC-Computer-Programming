@@ -1,0 +1,14 @@
+package chap44example;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class EmployeeTest {
+
+	@Test
+	public void testDeduct() {
+		System.out.println("This test ran");
+	}
+
+}

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://www.vogella.com/tutorials/MySQLJava/article.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 2.0.10"><meta name="author" content="Lars Vogel (c) 2009 - 2021 vogella GmbH"><title>MySQL and Java JDBC - Tutorial</title><script src="./MySQL and Java JDBC - Tutorial_files/quant.js.download" async="" type="text/javascript"></script><script src="./MySQL and Java JDBC - Tutorial_files/quant.js.download" async="" type="text/javascript"></script><script async="" type="text/javascript" src="./MySQL and Java JDBC - Tutorial_files/cmp2.js.download"></script><script async="" type="text/javascript" src="./MySQL and Java JDBC - Tutorial_files/gpt.js.download"></script><script async="" type="text/javascript" src="./MySQL and Java JDBC - Tutorial_files/choice.js.download"></script><script>window.mod_pagespeed_start = Number(new Date());</script><link rel="stylesheet" href="./MySQL and Java JDBC - Tutorial_files/asciidoctor.css"><link rel="stylesheet" type="text/css" href="./MySQL and Java JDBC - Tutorial_files/articles.css">
+<link rel="stylesheet" type="text/css" href="./MySQL and Java JDBC - Tutorial_files/header.css">
+<link href="./MySQL and Java JDBC - Tutorial_files/icon" rel="stylesheet">
+<link rel="stylesheet" href="./MySQL and Java JDBC - Tutorial_files/css">
+<link rel="stylesheet" href="./MySQL and Java JDBC - Tutorial_files/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async="true">(function(){var host=window.location.hostname;var element=document.createElement('script');var firstScript=document.getElementsByTagName('script')[0];var url='https://quantcast.mgr.consensu.org'.concat('/choice/','LU3TErYtTq8Gq','/',host,'/choice.js')
+var uspTries=0;var uspTriesLimit=3;element.async=true;element.type='text/javascript';element.src=url;firstScript.parentNode.insertBefore(element,firstScript);function makeStub(){var TCF_LOCATOR_NAME='__tcfapiLocator';var queue=[];var win=window;var cmpFrame;function addFrame(){var doc=win.document;var otherCMP=!!(win.frames[TCF_LOCATOR_NAME]);if(!otherCMP){if(doc.body){var iframe=doc.createElement('iframe');iframe.style.cssText='display:none';iframe.name=TCF_LOCATOR_NAME;doc.body.appendChild(iframe);}else{setTimeout(addFrame,5);}}return!otherCMP;}function tcfAPIHandler(){var gdprApplies;var args=arguments;if(!args.length){return queue;}else if(args[0]==='setGdprApplies'){if(args.length>3&&args[2]===2&&typeof args[3]==='boolean'){gdprApplies=args[3];if(typeof args[2]==='function'){args[2]('set',true);}}}else if(args[0]==='ping'){var retr={gdprApplies:gdprApplies,cmpLoaded:false,cmpStatus:'stub'};if(typeof args[2]==='function'){args[2](retr);}}else{queue.push(args);}}function postMessageEventHandler(event){var msgIsString=typeof event.data==='string';var json={};try{if(msgIsString){json=JSON.parse(event.data);}else{json=event.data;}}catch(ignore){}var payload=json.__tcfapiCall;if(payload){window.__tcfapi(payload.command,payload.version,function(retValue,success){var returnMsg={__tcfapiReturn:{returnValue:retValue,success:success,callId:payload.callId}};if(msgIsString){returnMsg=JSON.stringify(returnMsg);}if(event&&event.source&&event.source.postMessage){event.source.postMessage(returnMsg,'*');}},payload.parameter);}}while(win){try{if(win.frames[TCF_LOCATOR_NAME]){cmpFrame=win;break;}}catch(ignore){}if(win===window.top){break;}win=win.parent;}if(!cmpFrame){addFrame();win.__tcfapi=tcfAPIHandler;win.addEventListener('message',postMessageEventHandler,false);}};makeStub();var uspStubFunction=function(){var arg=arguments;if(typeof window.__uspapi!==uspStubFunction){setTimeout(function(){if(typeof window.__uspapi!=='undefined'){window.__uspapi.apply(window.__uspapi,arg);}},500);}};var checkIfUspIsReady=function(){uspTries++;if(window.__uspapi===uspStubFunction&&uspTries<uspTriesLimit){console.warn('USP is not accessible');}else{clearInterval(uspInterval);}};if(typeof window.__uspapi==='undefined'){window.__uspapi=uspStubFunction;var uspInterval=setInterval(checkIfUspIsReady,6000);}})();</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+<!-- Google Analytics -->
+<script async="" src="./MySQL and Java JDBC - Tutorial_files/js"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-3967758-1',{'anonymize_ip':true});</script>
+<!-- End of Google Analytics -->
+
+<!--Google AdSense Auto ads
+<script async data-ad-client="ca-pub-3851443674951530" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+</script>-->
+<!--Google AdSense Auto ads --->
+
+<!-- Developer Media Ads Responsive -->
+<script>var googletag=googletag||{};googletag.cmd=googletag.cmd||[];(function(){var gads=document.createElement('script');gads.async=true;gads.type='text/javascript';var useSSL='https:'==document.location.protocol;gads.src=(useSSL?'https:':'http:')+'//www.googletagservices.com/tag/js/gpt.js';var node=document.getElementsByTagName('script')[0];node.parentNode.insertBefore(gads,node);})();</script>
+
+<script>googletag.cmd.push(function(){var mapping=googletag.sizeMapping().addSize([0,0],[300,250]).addSize([750,250],[300,250]).addSize([1170,200],[728,90]).build();googletag.defineSlot('/6839/lqm.javaeclipseandroid.site/right',[160,600],'ad-left').addService(googletag.pubads()).setTargeting('left');googletag.defineSlot('/6839/lqm.javaeclipseandroid.site/inbetween01',[[300,250],[728,90]],'ad-inBetween01').defineSizeMapping(mapping).addService(googletag.pubads()).setTargeting('inbetween01');googletag.defineSlot('/6839/lqm.javaeclipseandroid.site/afterresources',[[300,250],[728,90]],'ad-afterResources').defineSizeMapping(mapping).addService(googletag.pubads()).setTargeting('afterresources');googletag.pubads().enableSingleRequest();googletag.enableServices();});</script>
+
+<!-- Open/close the sidenav -->
+<script>function openCloseNav(){if(document.getElementById("mobileTopnav").style.width==="150px"){document.getElementById("mobileTopnav").style.width="0";document.body.style.marginLeft="8px";}else{document.getElementById("mobileTopnav").style.width="150px";document.body.style.marginLeft="160px";}}</script>
+<!-- End of Open/close the sidenav -->
+
+<style type="text/css"> .qc-cmp-button {    background-color: #ff8c00 !important;    border-color: #ff8c00 !important;  }  .qc-cmp-button:hover {    border-color: #ff8c00 !important;  }  .qc-cmp-alt-action,  .qc-cmp-link {    color: #ff8c00 !important;  }  .qc-cmp-button.qc-cmp-secondary-button:hover {    background-color: #ff8c00 !important;    border-color: #ff8c00 !important;  }  .qc-cmp-button.qc-cmp-secondary-button:hover {    color: #ffffff !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    color: #368bd6 !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    background-color: #eee !important;    border-color: transparent !important;  }  .qc-cmp-ui,  .qc-cmp-ui .qc-cmp-title,  .qc-cmp-ui .qc-cmp-table,  .qc-cmp-ui .qc-cmp-messaging,  .qc-cmp-ui .qc-cmp-sub-title,  .qc-cmp-ui .qc-cmp-vendor-list,  .qc-cmp-ui .qc-cmp-purpose-info,  .qc-cmp-ui .qc-cmp-table-header,  .qc-cmp-ui .qc-cmp-beta-messaging,  .qc-cmp-ui .qc-cmp-main-messaging,  .qc-cmp-ui .qc-cmp-vendor-list-title{    color: #fff !important;  }  .qc-cmp-ui {    background-color: #2b3137 !important;  } .qc-cmp2-persistent-link { background-color: #2b3137;}</style></head><body class="article toc2 toc-right"><div id="mobileHeaderpart">
+    <span onclick="openCloseNav()"><img src="./MySQL and Java JDBC - Tutorial_files/burger.svg" alt=""> </span>
+    <div id="mobileLogo">
+        <a title="vogella.com" href="https://www.vogella.com/">
+            <img src="./MySQL and Java JDBC - Tutorial_files/index_logo.svg" alt="vogella.com">
+        </a>
+    </div>
+</div>
+
+<div id="mobileTopnav" class="sidenav">
+    <a href="https://www.vogella.com/">Home</a>
+    <a class="currentpage" href="https://www.vogella.com/tutorials/">Tutorials</a>
+    <a href="https://www.vogella.com/training/">Training</a>
+    <a href="https://www.vogella.com/consulting/">Consulting</a>
+    <a href="https://www.vogella.com/products/">Products</a>
+    <a href="https://www.vogella.com/books/">Books</a>
+    <a href="https://www.vogella.com/company/">Company</a>
+    <a href="https://www.vogella.com/support.html">Donate</a>
+    <a style="margin-bottom:60px" href="https://www.vogella.com/contact.html">Contact us</a></div>
+
+<div id="headerpart">
+
+	<div id="logo">
+		<a title="vogella.com" href="https://www.vogella.com/">
+			<img src="./MySQL and Java JDBC - Tutorial_files/xindex_logo.png.pagespeed.ic.tIT74pGTDx.webp" alt="vogella.com">
+		</a>
+	</div> <!-- logo -->
+
+	<div id="topnav">
+		<ul id="home" class="topnav">
+			<li id="home-icon"><a href="https://www.vogella.com/"></a></li>
+			<li class="currentpage"> <a href="https://www.vogella.com/tutorials/">Tutorials</a>
+				<ul>
+					<li><a href="https://www.vogella.com/tutorials/eclipse.html">Eclipse RCP</a></li>
+					<li><a href="https://www.vogella.com/tutorials/eclipseide.html">Eclipse IDE</a></li>
+					<li><a href="https://www.vogella.com/tutorials/eclipseplatform.html">Eclipse IDE Extensions</a></li>
+					<li><a href="https://www.vogella.com/tutorials/flutter.html">Flutter</a></li>
+					<li><a href="https://www.vogella.com/tutorials/android.html">Android Programming</a></li>
+					<li><a href="https://www.vogella.com/tutorials/web.html">Web</a></li>
+					<li><a href="https://www.vogella.com/tutorials/java.html">Java</a></li>
+					<li><a href="https://www.vogella.com/tutorials/technology.html">Technology</a></li>
+					<li><a href="https://www.vogella.com/tutorials/algorithms.html">Software design</a></li>
+					<li><a href="https://github.com/vogellacompany/">Code @ GitHub</a></li>
+				</ul>
+			</li>
+			<li><a href="https://www.vogella.com/training/">Training</a>
+				<ul>
+					<li><a href="https://www.vogella.com/training/eclipse/eclipsercp.html">Eclipse RCP Training</a></li>
+					<li><a href="https://www.vogella.com/training/testbuild/javatesting.html">Java Testing Training</a></li>
+					<li><a href="https://www.vogella.com/training/appdevelopment/flutter.html">Cross Mobile App Dev. Training</a></li>
+					<li><a href="https://www.vogella.com/training/git/index.html">Git and Gerrit Training</a></li>
+					<li><a href="https://learn.vogella.com/">Self-study Portal</a></li>
+					<li><a href="https://www.vogella.com/training/onsite/index.html">Other Onsite Training</a></li>
+				</ul>
+			</li>
+
+			<li><a href="https://www.vogella.com/consulting/">Consulting</a></li>
+
+			<li><a href="https://www.vogella.com/company/">Company</a>
+				<ul>
+					<li><a href="https://www.vogella.com/jobs/">Jobs</a></li>
+					<li><a href="https://www.vogella.com/people/index.html">People</a></li>
+					<li><a href="https://www.vogella.com/customers.html" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Customers&#39;, &#39;clicked&#39;, &#39;Header&#39;]);">Customers</a></li>
+					<li><a href="http://blog.vogella.com/">Blog</a></li>
+					<li><a href="https://www.vogella.com/books/">Books</a>
+						<ul>
+							<li><a href="https://www.vogella.com/books/eclipsercp.html">Eclipse RCP</a></li>
+							<li><a href="https://www.vogella.com/books/eclipseide.html">Eclipse IDE</a></li>
+							<li><a href="https://www.vogella.com/books/eclipsecontribution.html">Contributing to the Eclipse Project</a></li>
+							<li><a href="https://www.vogella.com/books/git.html">Git</a></li>
+						</ul>
+					</li>
+					<li><a href="https://www.vogella.com/research.html">Research Projects</a>
+					</li><li><a href="https://www.paypal.com/donate?hosted_button_id=D2DMTGN3LJGQU">Donate</a></li>
+				</ul>
+			</li>
+
+			<li><a href="https://www.vogella.com/contact.html">Contact us</a></li>
+		</ul>
+	</div><!-- topnav -->
+
+	<div id="searchfixed">
+		<form action="https://www.vogella.com/search.html" id="cse-search-box">
+			<div id="searchwrapper">
+				<input type="hidden" name="cx" value="partner-pub-3851443674951530:3991491935">
+				<input type="hidden" name="cof" value="FORID:10">
+				<input type="hidden" name="ie" value="UTF-8">
+				<input type="text" placeholder="Search" id="search_field" name="q" size="55">
+				<input type="image" src="./MySQL and Java JDBC - Tutorial_files/srch.png" id="search_button" name="sa" alt="Search">
+			</div>
+		</form>
+	</div> <!-- searchfixed -->
+
+</div> <!-- headerpart -->
+
+<div id="leftcol">
+	<!-- Developer Media Ads -->
+	<div id="ad-left">
+		<script>googletag.cmd.push(function(){googletag.display('ad-left');});</script>
+	</div>
+
+	<!-- Google Ads -->
+	<div id="ad-left">
+		<script async="" src="./MySQL and Java JDBC - Tutorial_files/f.txt"></script>
+		<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-3851443674951530" data-ad-slot="6294971031"><iframe id="aswift_0" style="height: 1px !important; max-height: 1px !important; max-width: 1px !important; width: 1px !important;" src="./MySQL and Java JDBC - Tutorial_files/saved_resource.html"><iframe id="google_ads_frame0" src="./MySQL and Java JDBC - Tutorial_files/saved_resource(1).html"></iframe></iframe></ins>
+		<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+	</div>
+
+	<!-- PixFuture Display Ad Tag -->
+	<div id="ad-left">
+		<div id="25802x160x600x4365x_ADSLOT1" clicktrack="%%CLICK_URL_ESC%%"></div>
+		<script async="async" src="./MySQL and Java JDBC - Tutorial_files/headerbid.js.download" slotid="25802x160x600x4365x_ADSLOT1" refreshtime="5" refreshinterval="60"></script>
+	</div>
+</div> <!-- leftcolumn -->
+
+<div id="rightcol_tutorial">
+	<br>
+	<br>
+	<!-- vogellas own advertising for training and books -->
+	<div class="vogella_ads">
+		<h1>Get more...</h1>
+			<ul><li>
+				<a href="https://learn.vogella.com/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;vogella Services&#39;, &#39;clicked&#39;, &#39;Learn more...&#39;]);">Read Premium Content ...</a>
+				</li><li><a href="https://www.vogella.com/training/onsite/index.html" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;vogella Services&#39;, &#39;clicked&#39;, &#39;training&#39;]);">Book Onsite or Virtual Training</a></li>
+				<li><a href="https://www.vogella.com/consulting/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;vogella Services&#39;, &#39;clicked&#39;, &#39;consulting&#39;]);">Consulting</a></li>
+			</ul>
+		<h1>Training Events</h1>
+			<ul>
+				<li><a href="https://www.vogella.com/training/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;vogella Services&#39;, &#39;clicked&#39;, &#39;Training&#39;]);">Now offering virtual, onsite and online training </a></li>
+			</ul>
+	</div>
+</div> <!--rightcol-->
+<div id="header"><h1>MySQL and Java JDBC - Tutorial</h1><div class="details"><span id="author"><a href="https://twitter.com/vogella" target="_blank" rel="noopener noreferrer"><icon class="fab fa-twitter-square twitter" aria-label="link to the twitter account of the author"></icon></a>Lars Vogel (c) 2009 - 2021 vogella GmbH</span><br><span id="revnumber">Version 1.4,</span><span id="revdate">29.09.2016</span></div><div id="toc" class="toc2"><div id="toctitle">Table of Contents</div><ul class="sectlevel1 "><li><a href="https://www.vogella.com/tutorials/MySQLJava/article.html#jdbc">1. Connection to database with Java</a><div id="toctitle"></div><ul class="sectlevel2 hidden-toc-element"></ul></li><li><a href="https://www.vogella.com/tutorials/MySQLJava/article.html#overview">2. Introduction to MySQL</a><div id="toctitle"></div><ul class="sectlevel2 hidden-toc-element"></ul></li><li><a href="https://www.vogella.com/tutorials/MySQLJava/article.html#jdbcdriver">3. MySQL JDBC driver</a><div id="toctitle"></div><ul class="sectlevel2 hidden-toc-element"></ul></li><li><a href="https://www.vogella.com/tutorials/MySQLJava/article.html#database">4. Exercise: create example database</a><div id="toctitle"></div><ul class="sectlevel2 hidden-toc-element"></ul></li><li><a href="https://www.vogella.com/tutorials/MySQLJava/article.html#javaconnection">5. Java JDBC</a><div id="toctitle"></div><ul class="sectlevel2 hidden-toc-element"></ul></li><li><a href="https://www.vogella.com/tutorials/MySQLJava/article.html#resources">6. Links and Literature</a><div id="toctitle"></div><ul class="sectlevel2 hidden-toc-element"></ul></li></ul></div></div><div id="content" role="main"><div id="preamble">
+<div class="sectionbody">
+<div class="quoteblock abstract">
+<blockquote>
+MySQL and Java JDBC.
+This tutorial describes how to use Java JDBC to connect to MySQL and perform SQL queries, database inserts and deletes.
+</blockquote>
+</div>
+<!-- After Table of Content Google Ads
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3851443674951530"
+     data-ad-slot="4470606330"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+-->
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdbc"><a class="anchor" href="https://www.vogella.com/tutorials/MySQLJava/article.html#jdbc"></a><a class="link" href="https://www.vogella.com/tutorials/MySQLJava/article.html#jdbc">1. Connection to database with Java</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The interface for accessing relational databases from Java is
+<em>Java Database Connectivity (JDBC)</em>. Via JDBC you create a connection to the database, issue database
+queries and update as well as receive the results.</p>
+</div>
+<div class="paragraph">
+<p>JDBC provides an interface which allows you to perform SQL
+operations independently of the instance of the used database. To use
+JDBC, you require the database specific implementation of the
+JDBC
+driver.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="anchor" href="https://www.vogella.com/tutorials/MySQLJava/article.html#overview"></a><a class="link" href="https://www.vogella.com/tutorials/MySQLJava/article.html#overview">2. Introduction to MySQL</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To learn to install and use MySQL please
+see
+<a href="https://www.vogella.com/tutorials/MySQL/article.html">MySQL - Tutorial</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following description will assume that you have successfully installed
+MySQL and know how to access MySQL via the command line.</p>
+</div>
+<!-- In Between 1 Developer Media Ads -->
+<div id="ad-inBetween01">
+	<script>googletag.cmd.push(function(){googletag.display('ad-inBetween01');});</script>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdbcdriver"><a class="anchor" href="https://www.vogella.com/tutorials/MySQLJava/article.html#jdbcdriver"></a><a class="link" href="https://www.vogella.com/tutorials/MySQLJava/article.html#jdbcdriver">3. MySQL JDBC driver</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To connect to MySQL from Java, you have to use the JDBC driver from MySQL.
+The MySQL JDBC driver is called <em>MySQL Connector/J</em>.
+You find the latest MySQL JDBC driver under the following URL: <a href="http://dev.mysql.com/downloads/connector/j" class="bare">http://dev.mysql.com/downloads/connector/j</a>.</p>
+</div>
+<div class="paragraph">
+<p>The download contains a <code>JAR</code> file which we require later.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="database"><a class="anchor" href="https://www.vogella.com/tutorials/MySQLJava/article.html#database"></a><a class="link" href="https://www.vogella.com/tutorials/MySQLJava/article.html#database">4. Exercise: create example database</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this exercise you create a new database, a new user and an example table.
+For this connect to the MySQL server via the <code>mysql</code> command line client.</p>
+</div>
+<div class="paragraph">
+<p>Create a new database called <em>feedback</em> and start using it with the following command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="text">create database feedback;
+use feedback;</code><input role="button" type="button" value="Copy" class="clipboard"></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create a user with the following command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="text">CREATE USER sqluser IDENTIFIED BY 'sqluserpw';
+
+grant usage on *.* to sqluser@localhost identified by 'sqluserpw';
+grant all privileges on feedback.* to sqluser@localhost;</code><input role="button" type="button" value="Copy" class="clipboard"></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now create a sample database table with example content via the following SQL statement.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="text">CREATE TABLE comments (
+        id INT NOT NULL AUTO_INCREMENT,
+        MYUSER VARCHAR(30) NOT NULL,
+        EMAIL VARCHAR(30),
+        WEBPAGE VARCHAR(100) NOT NULL,
+        DATUM DATE NOT NULL,
+        SUMMARY VARCHAR(40) NOT NULL,
+        COMMENTS VARCHAR(400) NOT NULL,
+        PRIMARY KEY (ID)
+    );
+
+INSERT INTO comments values (default, 'lars', 'myemail@gmail.com','https://www.vogella.com/', '2009-09-14 10:33:11', 'Summary','My first comment' );</code><input role="button" type="button" value="Copy" class="clipboard"></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="javaconnection"><a class="anchor" href="https://www.vogella.com/tutorials/MySQLJava/article.html#javaconnection"></a><a class="link" href="https://www.vogella.com/tutorials/MySQLJava/article.html#javaconnection">5. Java JDBC</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a Java project and a package called <em>de.vogella.mysql.first</em>.</p>
+</div>
+<div class="paragraph">
+<p>Create a <code>lib</code> folder and copy the JDBC driver into this folder.
+Add the JDBC driver to your classpath.
+See <a href="https://www.vogella.com/tutorials/Eclipse/article.html#classpath">Adding jars to the classpath</a> for details.</p>
+</div>
+<div class="paragraph">
+<p>Create the following class to connect to the MySQL database and perform queries, inserts and deletes.
+It also prints the metadata (table name, column names) of a query result.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">de.vogella.mysql.first</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.PreparedStatement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.ResultSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.SQLException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.Statement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MySQLAccess</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">Connection</span> <span class="n">connect</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">PreparedStatement</span> <span class="n">preparedStatement</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">ResultSet</span> <span class="n">resultSet</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">readDataBase</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="c1">// This will load the MySQL driver, each DB has its own driver</span>
+            <span class="nc">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"com.mysql.jdbc.Driver"</span><span class="o">);</span>
+            <span class="c1">// Setup the connection with the DB</span>
+            <span class="n">connect</span> <span class="o">=</span> <span class="nc">DriverManager</span>
+                    <span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="s">"jdbc:mysql://localhost/feedback?"</span>
+                            <span class="o">+</span> <span class="s">"user=sqluser&amp;password=sqluserpw"</span><span class="o">);</span>
+
+            <span class="c1">// Statements allow to issue SQL queries to the database</span>
+            <span class="n">statement</span> <span class="o">=</span> <span class="n">connect</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+            <span class="c1">// Result set get the result of the SQL query</span>
+            <span class="n">resultSet</span> <span class="o">=</span> <span class="n">statement</span>
+                    <span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="s">"select * from feedback.comments"</span><span class="o">);</span>
+            <span class="n">writeResultSet</span><span class="o">(</span><span class="n">resultSet</span><span class="o">);</span>
+
+            <span class="c1">// PreparedStatements can use variables and are more efficient</span>
+            <span class="n">preparedStatement</span> <span class="o">=</span> <span class="n">connect</span>
+                    <span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="s">"insert into  feedback.comments values (default, ?, ?, ?, ? , ?, ?)"</span><span class="o">);</span>
+            <span class="c1">// "myuser, webpage, datum, summary, COMMENTS from feedback.comments");</span>
+            <span class="c1">// Parameters start with 1</span>
+            <span class="n">preparedStatement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="s">"Test"</span><span class="o">);</span>
+            <span class="n">preparedStatement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="s">"TestEmail"</span><span class="o">);</span>
+            <span class="n">preparedStatement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="s">"TestWebpage"</span><span class="o">);</span>
+            <span class="n">preparedStatement</span><span class="o">.</span><span class="na">setDate</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">sql</span><span class="o">.</span><span class="na">Date</span><span class="o">(</span><span class="mi">2009</span><span class="o">,</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">11</span><span class="o">));</span>
+            <span class="n">preparedStatement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="s">"TestSummary"</span><span class="o">);</span>
+            <span class="n">preparedStatement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="s">"TestComment"</span><span class="o">);</span>
+            <span class="n">preparedStatement</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>
+
+            <span class="n">preparedStatement</span> <span class="o">=</span> <span class="n">connect</span>
+                    <span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="s">"SELECT myuser, webpage, datum, summary, COMMENTS from feedback.comments"</span><span class="o">);</span>
+            <span class="n">resultSet</span> <span class="o">=</span> <span class="n">preparedStatement</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">();</span>
+            <span class="n">writeResultSet</span><span class="o">(</span><span class="n">resultSet</span><span class="o">);</span>
+
+            <span class="c1">// Remove again the insert comment</span>
+            <span class="n">preparedStatement</span> <span class="o">=</span> <span class="n">connect</span>
+            <span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="s">"delete from feedback.comments where myuser= ? ; "</span><span class="o">);</span>
+            <span class="n">preparedStatement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="s">"Test"</span><span class="o">);</span>
+            <span class="n">preparedStatement</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>
+
+            <span class="n">resultSet</span> <span class="o">=</span> <span class="n">statement</span>
+            <span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="s">"select * from feedback.comments"</span><span class="o">);</span>
+            <span class="n">writeMetaData</span><span class="o">(</span><span class="n">resultSet</span><span class="o">);</span>
+
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">close</span><span class="o">();</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">writeMetaData</span><span class="o">(</span><span class="nc">ResultSet</span> <span class="n">resultSet</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span> <span class="o">{</span>
+        <span class="c1">//  Now get some metadata from the database</span>
+        <span class="c1">// Result set get the result of the SQL query</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The columns in the table are: "</span><span class="o">);</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Table: "</span> <span class="o">+</span> <span class="n">resultSet</span><span class="o">.</span><span class="na">getMetaData</span><span class="o">().</span><span class="na">getTableName</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+        <span class="k">for</span>  <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;=</span> <span class="n">resultSet</span><span class="o">.</span><span class="na">getMetaData</span><span class="o">().</span><span class="na">getColumnCount</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Column "</span> <span class="o">+</span><span class="n">i</span>  <span class="o">+</span> <span class="s">" "</span><span class="o">+</span> <span class="n">resultSet</span><span class="o">.</span><span class="na">getMetaData</span><span class="o">().</span><span class="na">getColumnName</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">writeResultSet</span><span class="o">(</span><span class="nc">ResultSet</span> <span class="n">resultSet</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span> <span class="o">{</span>
+        <span class="c1">// ResultSet is initially before the first data set</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">resultSet</span><span class="o">.</span><span class="na">next</span><span class="o">())</span> <span class="o">{</span>
+            <span class="c1">// It is possible to get the columns via name</span>
+            <span class="c1">// also possible to get the columns via the column number</span>
+            <span class="c1">// which starts at 1</span>
+            <span class="c1">// e.g. resultSet.getSTring(2);</span>
+            <span class="nc">String</span> <span class="n">user</span> <span class="o">=</span> <span class="n">resultSet</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"myuser"</span><span class="o">);</span>
+            <span class="nc">String</span> <span class="n">website</span> <span class="o">=</span> <span class="n">resultSet</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"webpage"</span><span class="o">);</span>
+            <span class="nc">String</span> <span class="n">summary</span> <span class="o">=</span> <span class="n">resultSet</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"summary"</span><span class="o">);</span>
+            <span class="nc">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="n">resultSet</span><span class="o">.</span><span class="na">getDate</span><span class="o">(</span><span class="s">"datum"</span><span class="o">);</span>
+            <span class="nc">String</span> <span class="n">comment</span> <span class="o">=</span> <span class="n">resultSet</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"comments"</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"User: "</span> <span class="o">+</span> <span class="n">user</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Website: "</span> <span class="o">+</span> <span class="n">website</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"summary: "</span> <span class="o">+</span> <span class="n">summary</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Date: "</span> <span class="o">+</span> <span class="n">date</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Comment: "</span> <span class="o">+</span> <span class="n">comment</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// You need to close the resultSet</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">close</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">resultSet</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">resultSet</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="o">}</span>
+
+            <span class="k">if</span> <span class="o">(</span><span class="n">statement</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">statement</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="o">}</span>
+
+            <span class="k">if</span> <span class="o">(</span><span class="n">connect</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">connect</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+<span class="o">}</span></code><input role="button" type="button" value="Copy" class="clipboard"></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create the following main program to test your class.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">de.vogella.mysql.first.test</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">de.vogella.mysql.first.MySQLAccess</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+        <span class="nc">MySQLAccess</span> <span class="n">dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MySQLAccess</span><span class="o">();</span>
+        <span class="n">dao</span><span class="o">.</span><span class="na">readDataBase</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span></code><input role="button" type="button" value="Copy" class="clipboard"></pre>
+</div>
+</div>
+<!-- Developer Media -->
+<div id="ad-afterResources">
+	<script>googletag.cmd.push(function(){googletag.display('ad-afterResources');});</script>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="resources"><a class="anchor" href="https://www.vogella.com/tutorials/MySQLJava/article.html#resources"></a><a class="link" href="https://www.vogella.com/tutorials/MySQLJava/article.html#resources">6. Links and Literature</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://www.mysql.com/">MySQL homepage</a></p>
+</div>
+<div class="paragraph">
+<p><a href="http://dev.mysql.com/downloads/">Download link for MySQL</a></p>
+</div>
+<div class="paragraph">
+<p>If you need more assistance we offer <a href="https://learn.vogella.com/">Online Training</a> and <a href="https://www.vogella.com/training/">Onsite training</a> as well as <a href="https://www.vogella.com/consulting/">consulting</a></p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.vogella.com/license.html">License for license information</a>.</p>
+</div>
+<img src="./MySQL and Java JDBC - Tutorial_files/ccfea69d517a415289485b24ee15b00a" width="1" height="1" alt="" t1ut26b7g="">
+</div>
+</div></div><iframe name="__tcfapiLocator" style="display: none;" src="./MySQL and Java JDBC - Tutorial_files/saved_resource(2).html"></iframe><div id="footer"><div id="footer-text">Last updated 18:07 29. Jul 2021</div><script src="./MySQL and Java JDBC - Tutorial_files/jquery.js.pagespeed.jm.zp18PNbMUR.js.download"></script>
+<script src="./MySQL and Java JDBC - Tutorial_files/clipboard.js.download"></script>
+<script>//<![CDATA[
+function toggleToc(event){icon=event.target;iconCl=icon.classList;if(icon.getAttribute('aria-expanded')=="true"){iconCl.remove('fa-chevron-up');iconCl.add('fa-chevron-down');icon.setAttribute('aria-expanded',false)}else{iconCl.remove('fa-chevron-down');iconCl.add('fa-chevron-up');icon.setAttribute('aria-expanded',true)}var li=icon.parentElement;var cl=li.querySelector('ul').classList;if(cl.contains('hidden-toc-element')){cl.remove('hidden-toc-element');}else{cl.add('hidden-toc-element');}}function keyDownToggleToc(event){if(event.isComposing||event.keyCode==229){return;}if(event.keyCode==13||event.keyCode==32||event.keyCode==37||event.keyCode==38||event.keyCode==39||event.keyCode==40){event.preventDefault();toggleToc(event);}}document.querySelectorAll('.sectlevel1 > * > icon').forEach(sectLevel1=>{sectLevel1.addEventListener('click',toggleToc);sectLevel1.addEventListener('keydown',keyDownToggleToc);})
+//]]></script>
+
+<link rel="stylesheet" href="./MySQL and Java JDBC - Tutorial_files/rouge-thankful_eyes.css">
+
+<!-- Quantcast Tag -->
+<script type="text/javascript">window._qevents=window._qevents||[];(function(){var elem=document.createElement('script');elem.src=(document.location.protocol=="https:"?"https://secure":"http://edge")+".quantserve.com/quant.js";elem.async=true;elem.type="text/javascript";var scpt=document.getElementsByTagName('script')[0];scpt.parentNode.insertBefore(elem,scpt);})();window._qevents.push({qacct:"p-LU3TErYtTq8Gq",uid:"__INSERT_EMAIL_HERE__"});</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-LU3TErYtTq8Gq.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+<!-- Add copy button to code sections -->
+<script>$(function(){var pre=document.getElementsByTagName('pre');for(var i=0;i<pre.length;i++){var b=document.createElement('input');b.setAttribute('role','button');b.setAttribute('type','button');b.value='Copy';b.className='clipboard';if(pre[i].childNodes.length===1&&pre[i].childNodes[0].nodeType===3){var div=document.createElement('div');div.textContent=pre[i].textContent;pre[i].textContent='';pre[i].appendChild(div);}pre[i].appendChild(b);}new ClipboardJS('.clipboard',{text:function(b){return b.parentNode.innerText;}}).on('success',function(e){e.clearSelection();e.trigger.value='Copied';setTimeout(function(){e.trigger.value='Copy';},2000);});});</script>
+<!-- End of add copy button to code sections -->
+
+<a href="https://www.vogella.com/legal.html" rel="nofollow">Legal</a>
+<a href="https://www.vogella.com/privacy.html" rel="nofollow">Privacy Policy</a>
+<a class="change-consent" onclick="window.__tcfapi(&#39;displayConsentUi&#39;, 2, function() {} );">Change consent</a>
+
+
+</div><script data-pagespeed-no-defer="">//<![CDATA[
+(function(){window.pagespeed=window.pagespeed||{};var f=window.pagespeed;function h(c,a,e,b){this.f=c;this.a=a;this.b=e;this.g=b}f.beaconUrl="";
+function k(c){var a=c.f,e=window.mod_pagespeed_start,b=Number(new Date)-e,a=a+(-1==a.indexOf("?")?"?":"&"),a=a+"ets="+("load"==c.a?"load:":"unload:");if("beforeunload"!=c.a||!window.mod_pagespeed_loaded){a=a+b+("&r"+c.a+"=");if(window.performance){var b=window.performance.timing,d=b.navigationStart,g=b.requestStart,a=a+(b[c.a+"EventStart"]-d),a=a+("&nav="+(b.fetchStart-d)),a=a+("&dns="+(b.domainLookupEnd-b.domainLookupStart)),a=a+("&connect="+(b.connectEnd-b.connectStart)),a=a+("&req_start="+(g-d))+
+("&ttfb="+(b.responseStart-g)),a=a+("&dwld="+(b.responseEnd-b.responseStart)),a=a+("&dom_c="+(b.domContentLoadedEventStart-d));window.performance.navigation&&(a+="&nt="+window.performance.navigation.type);d=-1;b.msFirstPaint?d=b.msFirstPaint:window.chrome&&window.chrome.loadTimes&&(d=Math.floor(1E3*window.chrome.loadTimes().firstPaintTime));d-=g;0<=d&&(a+="&fp="+d)}else a+=b;f.getResourceTimingData&&window.parent==window&&(a+=f.getResourceTimingData());a+=window.parent!=window?"&ifr=1":"&ifr=0";"load"==
+c.a&&(window.mod_pagespeed_loaded=!0,(b=window.mod_pagespeed_num_resources_prefetched)&&(a+="&nrp="+b),(b=window.mod_pagespeed_prefetch_start)&&(a+="&htmlAt="+(e-b)));f.criticalCss&&(e=f.criticalCss,a+="&ccis="+e.total_critical_inlined_size+"&cces="+e.total_original_external_size+"&ccos="+e.total_overhead_size+"&ccrl="+e.num_replaced_links+"&ccul="+e.num_unreplaced_links);a+="&dpr="+window.devicePixelRatio;""!=c.b&&(a+=c.b);document.referrer&&(a+="&ref="+encodeURIComponent(document.referrer));a+=
+"&url="+encodeURIComponent(c.g);f.beaconUrl=a;(new Image).src=a}}f.c=function(c,a,e,b){var d=new h(c,a,e,b);window.addEventListener?window.addEventListener(a,function(){k(d)},!1):window.attachEvent("on"+a,function(){k(d)})};f.addInstrumentationInit=f.c;})();
+
+pagespeed.addInstrumentationInit('/mod_pagespeed_beacon', 'load', '', 'https://www.vogella.com/tutorials/MySQLJava/article.html');
+//]]></script></body></html>
