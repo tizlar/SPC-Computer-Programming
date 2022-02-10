@@ -1,0 +1,15 @@
+package QuizTest;
+
+public class Scratch {
+
+	public static void main(String[] args) {
+		
+		boolean odd = 12 % 2 == 1;
+		if(odd = false)
+			System.out.println("odd");
+		else
+			System.out.println("even");
+		
+	}
+
+}

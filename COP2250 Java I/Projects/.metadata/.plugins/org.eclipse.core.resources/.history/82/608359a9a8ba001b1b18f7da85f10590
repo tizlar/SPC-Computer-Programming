@@ -1,0 +1,9 @@
+package hello;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		double cost = 1_00_0.0_0;
+	}
+
+}

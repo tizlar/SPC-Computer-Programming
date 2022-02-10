@@ -1,0 +1,10 @@
+package izlar10;
+
+public class SecurityCodePattern {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

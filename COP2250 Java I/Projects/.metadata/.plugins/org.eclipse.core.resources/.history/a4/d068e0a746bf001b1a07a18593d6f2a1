@@ -1,0 +1,14 @@
+package QuizTest;
+
+public class Scratch {
+
+	public static void main(String[] args) {
+		int num = 90;
+		if (num >=100 || num <=200)
+		System.out.println(num);
+		else
+			System.out.println(false);
+		
+	}
+
+}

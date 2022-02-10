@@ -1,0 +1,13 @@
+package izlar1and2;
+
+public class Program4 {
+
+	public static void main(String[] args) {
+		double fourDecimal = 2.0004;
+		System.out.println("Four decimal place number: " + fourDecimal);
+		int castedVariable = (int)fourDecimal;
+		System.out.println("Four decimal place number casted as an int: " + castedVariable);
+
+	}
+
+}

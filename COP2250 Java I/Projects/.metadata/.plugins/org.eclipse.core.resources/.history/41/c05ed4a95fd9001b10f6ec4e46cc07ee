@@ -1,0 +1,17 @@
+package QuizTest;
+import java.util.*;
+import java.util.ArrayList;
+
+public class Scratch {
+
+	public static void main(String[] args) {
+		
+		Integer num = new Integer('10');
+	
+		
+		
+	}
+}
+	
+
+

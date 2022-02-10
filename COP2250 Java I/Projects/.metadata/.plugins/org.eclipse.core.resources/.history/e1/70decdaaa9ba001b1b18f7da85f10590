@@ -1,0 +1,11 @@
+package hello;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		int amount = 1;
+		++amount++;
+		System.out.println(amount);
+	}
+
+}

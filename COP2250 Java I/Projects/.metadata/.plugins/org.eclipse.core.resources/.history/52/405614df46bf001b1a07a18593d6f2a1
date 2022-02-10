@@ -1,0 +1,14 @@
+package QuizTest;
+
+public class Scratch {
+
+	public static void main(String[] args) {
+		String a = "4";
+		a += "5";
+		a += 6;
+		System.out.println(a);
+		
+		
+	}
+
+}

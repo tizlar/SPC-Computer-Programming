@@ -1,0 +1,19 @@
+package izlar4;
+
+public class Program42 {
+
+	public static void main(String[] args) {
+		int angleC = 90;
+		int sideA = 8;
+		int sideC = 17;
+		double angleA, angleB, sideB;
+		sideB = Math.sqrt(Math.pow(sideC, 2) - Math.pow(sideA, 2)); 
+		System.out.println("Side B = " + sideB);
+		angleA = Math.toDegrees(Math.asin(sideA/sideC));
+		angleB = 90 - angleA;
+		System.out.println("Angle A = " + angleA);
+		System.out.println("Angle B = " + angleB);
+
+	}
+
+}

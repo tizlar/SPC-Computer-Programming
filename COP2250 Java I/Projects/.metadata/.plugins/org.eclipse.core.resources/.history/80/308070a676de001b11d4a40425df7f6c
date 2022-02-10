@@ -1,0 +1,34 @@
+// SPC ID 00002491103 Tristan Izlar
+
+package izlar12;
+import java.util.Scanner;
+
+public class Program12_2 {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		String stringVal;
+		int byteVal;
+		char charVal;
+		
+		try {
+		System.out.println("Enter a positive byte value");
+		stringVal = input.next();
+		byteVal = (int)(byteVal);
+		if (byteVal >= 32 && byteVal <= 122) {
+			charVal = (char)(byteVal);
+			System.out.println("In ASCII, that is character" + charVal);
+		}
+		else {
+			System.out.println("Bad input. Run program again");
+		}
+		}
+		catch {
+			System.out.println("Bad input. Run program again");
+		}
+		
+
+	}
+
+}

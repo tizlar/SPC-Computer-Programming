@@ -1,0 +1,27 @@
+package izlar10;
+
+public class Motor {
+
+	private int cylinders;
+	private int hp;
+	private String type;
+	
+	Motor(int cylinders, int hp, String type){
+		this.cylinders = cylinders;
+		this.hp = hp;
+		this.type = type;
+	}
+	
+	public int getCylinders() {
+		return cylinders;
+	}
+	public int getHp(){
+		return hp;
+	}
+	public String getType() {
+		return type;
+	}
+	public String toString(){
+		return String.format("Cylinders: %d Horsepower: %d Type: %s", cylinders, hp, type);
+	}
+}

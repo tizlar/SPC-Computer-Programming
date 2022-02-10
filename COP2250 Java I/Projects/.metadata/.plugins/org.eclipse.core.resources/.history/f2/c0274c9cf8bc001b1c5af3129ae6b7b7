@@ -1,0 +1,16 @@
+package QuizTest;
+
+public class Scratch {
+
+	public static void main(String[] args) {
+		
+		int n1 = 12;
+		int n2 = 5;
+		if(n1 > 10 ^ n2 < 10)
+			System.out.println(true);
+		else
+			System.out.println(false);
+		
+	}
+
+}

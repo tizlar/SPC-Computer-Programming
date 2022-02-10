@@ -1,0 +1,12 @@
+package hello;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		int n1 = 12;
+		int n2 = 5;
+		int n3 = ++n1 - n2--;
+		System.out.println(n1,n2,n3);
+	}
+
+}

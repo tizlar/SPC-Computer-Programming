@@ -1,0 +1,23 @@
+// SPC ID 00002491103 Tristan Izlar
+
+package izlar12;
+import java.util.Scanner;
+
+public class Program12_2 {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		int byteVal;
+		char charVal;
+		
+		System.out.println("Enter a positive byte value");
+		byteVal = input.nextByte();
+		charVal = (char)(byteVal);
+		System.out.println(charVal);
+		
+		
+
+	}
+
+}

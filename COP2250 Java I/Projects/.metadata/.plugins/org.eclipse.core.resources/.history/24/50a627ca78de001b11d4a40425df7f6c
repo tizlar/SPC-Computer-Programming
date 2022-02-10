@@ -1,0 +1,17 @@
+// SPC ID 00002491103 Tristan Izlar
+
+package izlar12;
+import java.util.*;
+
+public class Program12_2 {
+
+	public static void main(String[] args) {
+		
+		int[] smallArray = {1,2,3,4,5,6,7};
+		for (int i: smallArray) {
+			System.out.print(i + " ");
+		}
+		
+
+	}
+}

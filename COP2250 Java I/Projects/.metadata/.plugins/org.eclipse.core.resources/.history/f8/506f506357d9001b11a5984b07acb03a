@@ -1,0 +1,22 @@
+package izlar10;
+import java.util.Scanner;
+
+public class SecurityCodePattern {
+
+	public static void main(String[] args) {
+		
+		// new scanner object
+		Scanner input = new Scanner(System.in);
+		
+		//prompt for user
+		System.out.println("Enter the code pattern");
+		
+		//gathering user input
+		String code = input.next();
+		
+		char[] chars = code.toCharArray();
+		
+		System.out.println(chars[0]);
+	}
+
+}

@@ -1,0 +1,14 @@
+package izlar10;
+
+public class TestVehicle {
+
+	public static void main(String[] args) {
+		
+		Motor motor1 = new Motor(2, 150, "hybrid");
+		
+		Vehicle car1 = new Vehicle("Toyota", "Prius", 2012, 15000, motor1);
+		
+		System.out.println(car1.toString());
+	}
+
+}

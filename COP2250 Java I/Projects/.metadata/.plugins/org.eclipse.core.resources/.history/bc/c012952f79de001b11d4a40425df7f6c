@@ -1,0 +1,30 @@
+// SPC ID 00002491103 Tristan Izlar
+
+package izlar12;
+import java.util.*;
+
+public class Program12_2 {
+
+	public static void main(String[] args) {
+		
+		int[] smallArray = {1,2,3,4,5,6,7};
+		for (int i: smallArray) {
+			System.out.print(i + " ");
+		}
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("\nEnter any index of the array: ");
+		
+		try {
+			int index = input.nextInt();
+			System.out.println("Element at index " + index + " is " + smallArray[index]);
+		}
+		catch (InputMismatchException ex) {
+			System.out.println("Bad input. Try again.");
+		}
+		catch (IndexOutOfBoundsException ex) {
+			System.out.println("Error. Array index was out of bounds.");
+		}
+
+	}
+}

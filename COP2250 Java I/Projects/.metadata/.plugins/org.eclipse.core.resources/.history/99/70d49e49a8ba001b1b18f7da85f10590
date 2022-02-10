@@ -1,0 +1,10 @@
+package hello;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		int loan = 1234;
+		int number = loan;
+	}
+
+}
