@@ -1,0 +1,3 @@
+﻿  Quiz Tester.cpp
+C:\Users\Tristan\Desktop\School\COP2220 C++ I\Assignments\Quiz Tester\Quiz Tester\Quiz Tester.cpp(30,14): error C7624: Type name 'main::bookList::publisher' cannot appear on the right side of a class member access expression
+C:\Users\Tristan\Desktop\School\COP2220 C++ I\Assignments\Quiz Tester\Quiz Tester\Quiz Tester.cpp(23,10): message : see declaration of 'main::bookList::publisher'

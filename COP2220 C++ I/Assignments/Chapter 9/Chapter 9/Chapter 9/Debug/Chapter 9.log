@@ -1,0 +1,4 @@
+﻿  Chapter9.cpp
+C:\Users\Tristan\Desktop\School\COP2220 C++ I\Assignments\Chapter 9\Chapter 9\Chapter 9\Chapter9.cpp(33,16): warning C4244: 'initializing': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Tristan\Desktop\School\COP2220 C++ I\Assignments\Chapter 9\Chapter 9\Chapter 9\Chapter9.cpp(26,14): warning C4101: 'cnt2': unreferenced local variable
+  Chapter 9.vcxproj -> C:\Users\Tristan\Desktop\School\COP2220 C++ I\Assignments\Chapter 9\Chapter 9\Debug\Chapter 9.exe

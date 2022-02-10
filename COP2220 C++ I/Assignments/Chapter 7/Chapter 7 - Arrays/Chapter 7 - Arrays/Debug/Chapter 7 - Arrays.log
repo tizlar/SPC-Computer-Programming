@@ -1,0 +1,4 @@
+﻿  Chapter7Arrays.cpp
+C:\Users\Tristan\Desktop\School\COP2220 C++ I\Assignments\Chapter 7\Chapter 7 - Arrays\Chapter 7 - Arrays\Chapter7Arrays.cpp(33,16): warning C4244: 'initializing': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Tristan\Desktop\School\COP2220 C++ I\Assignments\Chapter 7\Chapter 7 - Arrays\Chapter 7 - Arrays\Chapter7Arrays.cpp(26,14): warning C4101: 'cnt2': unreferenced local variable
+  Chapter 7 - Arrays.vcxproj -> C:\Users\Tristan\Desktop\School\COP2220 C++ I\Assignments\Chapter 7\Chapter 7 - Arrays\Debug\Chapter 7 - Arrays.exe
