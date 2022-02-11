@@ -1,0 +1,5 @@
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap08\Phonebook\Phonebook\obj\x86\Debug\Phonebook.csprojAssemblyReference.cache
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap08\Phonebook\Phonebook\obj\x86\Debug\Phonebook.Form1.resources
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap08\Phonebook\Phonebook\obj\x86\Debug\Phonebook.Properties.Resources.resources
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap08\Phonebook\Phonebook\obj\x86\Debug\Phonebook.csproj.GenerateResource.cache
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap08\Phonebook\Phonebook\obj\x86\Debug\Phonebook.csproj.CoreCompileInputs.cache

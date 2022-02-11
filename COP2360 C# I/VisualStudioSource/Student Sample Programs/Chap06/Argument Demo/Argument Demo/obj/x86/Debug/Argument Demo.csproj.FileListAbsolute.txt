@@ -1,0 +1,9 @@
+K:\Books\C#\Student Sample Programs\Chap06\Argument Demo\Argument Demo\bin\Debug\Argument Demo.exe
+K:\Books\C#\Student Sample Programs\Chap06\Argument Demo\Argument Demo\bin\Debug\Argument Demo.pdb
+K:\Books\C#\Student Sample Programs\Chap06\Argument Demo\Argument Demo\obj\x86\Debug\ResolveAssemblyReference.cache
+K:\Books\C#\Student Sample Programs\Chap06\Argument Demo\Argument Demo\obj\x86\Debug\Argument_Demo.Form1.resources
+K:\Books\C#\Student Sample Programs\Chap06\Argument Demo\Argument Demo\obj\x86\Debug\Argument_Demo.Properties.Resources.resources
+K:\Books\C#\Student Sample Programs\Chap06\Argument Demo\Argument Demo\obj\x86\Debug\GenerateResource.read.1.tlog
+K:\Books\C#\Student Sample Programs\Chap06\Argument Demo\Argument Demo\obj\x86\Debug\GenerateResource.write.1.tlog
+K:\Books\C#\Student Sample Programs\Chap06\Argument Demo\Argument Demo\obj\x86\Debug\Argument Demo.exe
+K:\Books\C#\Student Sample Programs\Chap06\Argument Demo\Argument Demo\obj\x86\Debug\Argument Demo.pdb

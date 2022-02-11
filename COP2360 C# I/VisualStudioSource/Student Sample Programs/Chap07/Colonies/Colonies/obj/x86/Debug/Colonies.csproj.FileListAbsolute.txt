@@ -1,0 +1,9 @@
+C:\Users\Tony\Documents\Books\C#\Student Sample Programs\Chap07\Colonies\Colonies\bin\Debug\Colonies.exe
+C:\Users\Tony\Documents\Books\C#\Student Sample Programs\Chap07\Colonies\Colonies\bin\Debug\Colonies.pdb
+C:\Users\Tony\Documents\Books\C#\Student Sample Programs\Chap07\Colonies\Colonies\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Tony\Documents\Books\C#\Student Sample Programs\Chap07\Colonies\Colonies\obj\x86\Debug\Colonies.Form1.resources
+C:\Users\Tony\Documents\Books\C#\Student Sample Programs\Chap07\Colonies\Colonies\obj\x86\Debug\Colonies.Properties.Resources.resources
+C:\Users\Tony\Documents\Books\C#\Student Sample Programs\Chap07\Colonies\Colonies\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Tony\Documents\Books\C#\Student Sample Programs\Chap07\Colonies\Colonies\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Tony\Documents\Books\C#\Student Sample Programs\Chap07\Colonies\Colonies\obj\x86\Debug\Colonies.exe
+C:\Users\Tony\Documents\Books\C#\Student Sample Programs\Chap07\Colonies\Colonies\obj\x86\Debug\Colonies.pdb

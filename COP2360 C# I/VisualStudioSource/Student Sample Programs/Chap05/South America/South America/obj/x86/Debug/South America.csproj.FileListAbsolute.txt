@@ -1,0 +1,20 @@
+G:\Books\C#\Student Sample Programs\Chap05\South America\South America\bin\Debug\South America.exe
+G:\Books\C#\Student Sample Programs\Chap05\South America\South America\bin\Debug\South America.pdb
+G:\Books\C#\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Books\C#\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South_America.Form1.resources
+G:\Books\C#\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South_America.Properties.Resources.resources
+G:\Books\C#\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\GenerateResource.read.1.tlog
+G:\Books\C#\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\GenerateResource.write.1.tlog
+G:\Books\C#\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South America.exe
+G:\Books\C#\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South America.pdb
+K:\Books\C#\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South America.exe
+K:\Books\C#\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South America.pdb
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap05\South America\South America\bin\Debug\South America.exe
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap05\South America\South America\bin\Debug\South America.pdb
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South America.csprojAssemblyReference.cache
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South_America.Form1.resources
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South_America.Properties.Resources.resources
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South America.csproj.GenerateResource.cache
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South America.csproj.CoreCompileInputs.cache
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South America.exe
+C:\Users\Tristan\Desktop\School\COP2360\VisualStudioSource\Student Sample Programs\Chap05\South America\South America\obj\x86\Debug\South America.pdb

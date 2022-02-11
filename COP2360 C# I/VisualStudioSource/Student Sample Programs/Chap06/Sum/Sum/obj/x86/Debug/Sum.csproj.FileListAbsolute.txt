@@ -1,0 +1,9 @@
+K:\Books\C#\Student Sample Programs\Chap06\Sum\Sum\bin\Debug\Sum.exe
+K:\Books\C#\Student Sample Programs\Chap06\Sum\Sum\bin\Debug\Sum.pdb
+K:\Books\C#\Student Sample Programs\Chap06\Sum\Sum\obj\x86\Debug\ResolveAssemblyReference.cache
+K:\Books\C#\Student Sample Programs\Chap06\Sum\Sum\obj\x86\Debug\Sum.Form1.resources
+K:\Books\C#\Student Sample Programs\Chap06\Sum\Sum\obj\x86\Debug\Sum.Properties.Resources.resources
+K:\Books\C#\Student Sample Programs\Chap06\Sum\Sum\obj\x86\Debug\GenerateResource.read.1.tlog
+K:\Books\C#\Student Sample Programs\Chap06\Sum\Sum\obj\x86\Debug\GenerateResource.write.1.tlog
+K:\Books\C#\Student Sample Programs\Chap06\Sum\Sum\obj\x86\Debug\Sum.exe
+K:\Books\C#\Student Sample Programs\Chap06\Sum\Sum\obj\x86\Debug\Sum.pdb
